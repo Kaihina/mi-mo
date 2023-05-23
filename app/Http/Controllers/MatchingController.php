@@ -8,7 +8,7 @@ use App\Models\Matching;
 class MatchingController extends Controller
 {
     public function index(Matching $matching)//インポートしたPostをインスタンス化して$postとして使用。
-{
-    return $matching->get();//$postの中身を戻り値にする。
-}
+    {
+        return view('matchings/index')->with(['matchings' => $matching->get()]);
+    }
 }
